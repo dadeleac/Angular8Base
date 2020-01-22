@@ -1,0 +1,42 @@
+@import '~@angular/material/theming'; 
+@include mat-core(); 
+
+$mat-remica: (
+    50 : #e7eef6,
+    100 : #c2d4e8,
+    200 : #99b8d9,
+    300 : #709cc9,
+    400 : #5286be,
+    500 : #3371b2,
+    600 : #2e69ab,
+    700 : #275ea2,
+    800 : #205499,
+    900 : #14428a,
+    A100 : #bed5ff,
+    A200 : #8bb4ff,
+    A400 : #5893ff,
+    A700 : #3f82ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #ffffff,
+            )
+    );
+
+
+
+$primary: mat-palette($mat-remica, 500, 100, 100); 
+$accent: mat-palette($mat-light-blue, 600, 300, 600); 
+$warn: mat-palette($mat-deep-orange, 300, 500, 800); 
+
