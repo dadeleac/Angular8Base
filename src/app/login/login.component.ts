@@ -17,8 +17,8 @@ export class LoginComponent  {
 
   login() : void {
       this.authService.login(this.username, this.password).subscribe(
-       data => {
-        alert("Ok credentials");
+       user => {
+        alert("Token: " + user.token);
         //  this.router.navigate(["user"]);
         },
        error => {
