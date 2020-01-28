@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../_core/services/auth.service';
+import { LoggerService } from '../_core/services/logger.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,8 @@ import { AuthService } from '../_core/services/auth.service';
 export class LoginComponent  {
 
   constructor(private authService: AuthService, 
-    private router : Router) { }
+    private router : Router, 
+    private log : LoggerService) { }
 
   private username : string;
   private password : string;
@@ -18,11 +20,11 @@ export class LoginComponent  {
   login() : void {
       this.authService.login(this.username, this.password).subscribe(
        user => {
-        alert("Token: " + user.token);
-        //  this.router.navigate(["user"]);
+        
+        this.router.navigate(["home"]);
         },
        error => {
-         alert("error");
+        this.log.logError(error); 
        }
      ); 
   }

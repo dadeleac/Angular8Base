@@ -6,17 +6,19 @@ import { SkipSelf, Optional, NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
+import { ApplicationInsightsService } from './logger/appinsights.service';
 
 @NgModule({
     imports: [RouterModule, HttpClientModule,
         FormsModule], 
     exports: [RouterModule, HttpClientModule,
         FormsModule, ], 
-    providers: [AuthService]
+    providers: [AuthService, ApplicationInsightsService]
 })
 
 export class CoreModule extends EnsureModuleLoadOnceGuard{
     constructor(@Optional() @SkipSelf() parentModule: CoreModule){
         super(parentModule); 
     }
+    
 }
