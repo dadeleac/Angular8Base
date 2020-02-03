@@ -7,13 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { ApplicationInsightsService } from './logger/appinsights.service';
+import { CookieService } from 'ngx-cookie-service'; 
 
 @NgModule({
     imports: [RouterModule, HttpClientModule,
         FormsModule], 
     exports: [RouterModule, HttpClientModule,
-        FormsModule, ], 
-    providers: [AuthService, ApplicationInsightsService]
+        FormsModule], 
+    providers: [AuthService, ApplicationInsightsService, 
+        CookieService]
 })
 
 export class CoreModule extends EnsureModuleLoadOnceGuard{

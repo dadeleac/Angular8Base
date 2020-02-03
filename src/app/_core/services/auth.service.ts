@@ -27,7 +27,6 @@ export class AuthService{
                     localStorage.setItem('currentUser', JSON.stringify(user));
                     this.appInsights.setUserId(username); 
                     this.currentUserSubject.next(user);
-                    
                 }
                 return user;
             }));

@@ -10,6 +10,8 @@ import { SidenavComponent } from './_nav/sidenav/sidenav.component';
 import { SideNavModule } from './_nav/sidenav/sidenav.module';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
+import { HomeLayoutComponent } from './_core/layout/home.layout.component';
+import { LoginLayoutComponent } from './_core/layout/login.layout.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { AdminComponent } from './admin/admin.component';
     AppComponent,
     SidenavComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent, 
+    HomeLayoutComponent, 
+    LoginLayoutComponent
   ],
   imports: [
     BrowserModule,
