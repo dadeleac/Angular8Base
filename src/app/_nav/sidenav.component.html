@@ -1,0 +1,32 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">Responsive App</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [opened]="mobileQuery.matches ? false : true">Sidenav Content {{mobileQuery.matches}}
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<!-- 
+<div class="example-container">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true"><mat-icon>menu</mat-icon></button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+      
+</mat-sidenav>
+<mat-sidenav-content fxFlexFill><router-outlet></router-outlet></mat-sidenav-content>
+
+  </mat-sidenav-container>
+  <mat-toolbar class="example-footer">Footer</mat-toolbar> 
+</div> -->

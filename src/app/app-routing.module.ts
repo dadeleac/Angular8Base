@@ -10,7 +10,7 @@ import { HomeLayoutComponent } from './_core/layout/home.layout.component';
 
 const routes: Routes = [
   // { path: '', pathMatch: 'full', component: LoginComponent },
-  { path: 'home', component: HomeLayoutComponent, canActivate : [AuthGuard], 
+  { path: 'home', component: HomeLayoutComponent, 
       children: [ { path: '', component: HomeComponent, canActivate : [AuthGuard], data: { roles: [Role.User]}},
                   { path: 'admin', component: AdminComponent, canActivate : [AuthGuard], data: { roles: [Role.Admin]}}
                 ],
